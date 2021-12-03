@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>My profile</title>
+        <link href="{{url_for('static',filename='css/bootstrap.css')}}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container" style="border: 1px solid black;">
+
+
+            <h2>Create Post</h2>
+         <form action="" method="post">
+          {{ pos.csrf_token() }}
+          <div>
+          {% set x =get_flashed_messages() %}
+      {% if x:%}
+      {% for i in x %}
+      {{ x }}
+      {% endfor %}
+      {% endif %}
+      </div>
+          {{ pos.title.label }} {{ pos.title }}<br><br>
+           {{ pos.desc.label }} {{ pos.desc }}<br><br>
+          {{pos.mssg.label }}  {{ pos.mssg }}<br><br>
+           {{ pos.submit }}<br><br>
+           
+
+            
+         </form>
+
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>IT Professionals</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{{url_for('static',filename='css/style.css')}}" rel="stylesheet">
+  
+<style type="text/css">
+.nav-link{ color:white;}
+.nav-link:hover{
+	color:grey;
+}
+</style>
+
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg  fixed-top" style='background-color:green'>
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="{{url_for('static',filename='images/logo2.png')}}" width='100'></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+		   <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+		   <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Hello Adeola
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              <a class="dropdown-item" href="blog-home-1.html">Edit Profile</a>
+              <a class="dropdown-item" href="blog-home-2.html">My Payments</a>
+              <a class="dropdown-item" href="blog-post.html">Logout</a>
+            </div>
+          </li>
+          <li class="nav-item" style='background-color:yellow;margin-left:60px !important;'>
+            <a class="nav-link" style='color:green' href='#' data-toggle="modal" data-target="#exampleModal" >Login</a>
+          </li>
+           
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">IT Professionals
+      <small>All Members</small>
+    </h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="index.html">Home</a>
+      </li>
+      <li class="breadcrumb-item active">All Members</li>
+    </ol>
+
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="single.html"><img class="card-img-top" src="{{url_for('static',filename='profile/p1.jpg')}}" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="single.html">Member One</a>
+            </h4>
+            <p class="card-text">A well-bred software developer who can turn any idea into business using technology</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="{{url_for('static',filename='profile/p2.jpg')}}" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#">Member Two</a>
+            </h4>
+           <p class="card-text">A well-bred software developer who can turn any idea into business using technology</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="{{url_for('static',filename='profile/p3.jpg')}}" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#">Member Three</a>
+            </h4>
+           <p class="card-text">A well-bred software developer who can turn any idea into business using technology</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="{{url_for('static',filename='profile/p4.jpg')}}" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#">Member Four</a>
+            </h4>
+           <p class="card-text">A well-bred software developer who can turn any idea into business using technology</p>
+          </div>
+        </div>
+      </div>
+      
+      
+     
+      
+    </div>
+
+    <!-- Pagination -->
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+  <!-- /.container -->
+
+ <!-- Footer -->
+  <footer class="py-5" style='background-color:green'>
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{url_for('static',filename='vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+{% extends 'user/layout.html' %}
+
+{% block content %}
+
+<div>
+    {{ record|count }}
+</div>
+
+<div>
+    <!-- this is counting from Jinja  template -->
+    {{ rec }}
+</div>
+
+<div>
+    {% if record %}
+<table class="table table-striped">
+<tr>
+    <th>S/N</th>
+    <th>Post Title</th>
+    <th>Post Content</th>
+    
+    <th>Date Posted</th>
+</tr>
+{% for i in record %}
+<tr>
+    <td> {{ loop.index }}</td>
+    <td>{{ i.post_title }}</td>
+    <td>{{ i.post_content }}</td>
+    <td>{{ i.post_created_on }}</td>
+    
+
+</tr>
+{% endfor %}
+</table>
+{% endif%}
+</div>
+
+
+h
+{% endblock %}

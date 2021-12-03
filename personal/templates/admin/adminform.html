@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>My profile</title>
+        <link href="{{url_for('static',filename='css/bootstrap.css')}}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container" style="border: 1px solid black;">
+
+
+            <h2>Upload IV</h2>
+          <form action="" method="post" enctype="multipart/form-data">
+           {{ pos.csrf_token() }}
+         
+        
+   
+           {{ pos.ivcard.label }} {{ pos.ivcard(class='form-control') }}<br><br>
+           {{ pos.msg.label }} {{ pos.msg }}<br><br>
+           <button class="btn btn-dark btn-block" type="button" onclick="document.location.href='/admin/dash'">Cancel</button>
+
+           {{ pos.submit(class='btn btn-success btn-block') }}<br><br>
+           
+
+            
+         </form>
+
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+{% extends 'user/layout2.html' %}
+
+
+{% block row1 %}
+
+
+<form method="post" action="">
+<input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+   
+    <h1>Gift Registry</h1><br><br>
+   
+   <table>
+       <tr>
+   <th></th>
+   <th>Items</th>
+   <th>Quantity</th>
+   </tr>
+    
+   {% if allgifts %}
+   {% for i in allgifts %}
+   <tr>
+   
+ <td><input type="checkbox" name="item"  value="{{ i.id }}"></td>
+  <td>{{ i.giftname}}</td>
+  <td><input type="number"name="quantity"></td>
+    
+   </tr> 
+   {% endfor %}
+   {% endif %}
+
+    <button class="btn btn-primary">Submit</button>
+    </div>
+    </table>
+    </form>
+
+
+{% endblock %}
+

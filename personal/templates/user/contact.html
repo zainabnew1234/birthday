@@ -1,0 +1,40 @@
+{% extends 'user/layout.html' %}
+
+{% block banner %}
+<img src="{{url_for('static',filename='images/g1.jpg')}}">
+<br><br><br>
+<p>
+    <pre>
+        {{myconfig}}
+    </pre>
+</p>
+
+<div class="form-group-row">
+    <div class="col-md-12">
+        {{ usercountry }}
+        <button class="btn btn-warning"></button>
+
+    </div>
+
+</div>
+{% endblock banner %}
+
+
+{% block footer %}
+
+{{session.get('use')}}
+<form action="/submit" method="post">
+    <div class="form-group row">
+    <input type="text" name="fullname" placeholder="Fullname" class="form-control" ><br><br>
+    <textarea class="form-control" placeholder="Write a message here" name="message"></textarea><br><br>
+    <select name="gen">Gender
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+    <button class="btn btn-primary btn-large">Send</button><br><br>
+</div>
+</form>
+
+{% endblock  %}                   
+
+

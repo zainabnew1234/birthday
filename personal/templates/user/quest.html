@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>My profile</title>
+        <link href="{{url_for('static',filename='css/bootstrap.css')}}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container" style="border: 1px solid black;">
+
+
+            <h2>Ask Question</h2>
+          <form action="{{url_for('submitquest')}}" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+         
+        <label>Question</label>
+        <textarea class="form-control" name="quest"></textarea><br><br>
+        <button class="btn btn-primary">Submit</button>
+
+            
+         </form>
+
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+

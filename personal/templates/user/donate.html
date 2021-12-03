@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>My profile</title>
+        <link href="{{url_for('static',filename='css/bootstrap.css')}}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container" style="border: 1px solid black;">
+
+
+            <h2>Donate money</h2>
+            <p>You can donate money to towards the preparation pf d birthday</p>
+          <form action="" method="post" id="paymentForm">
+          <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+         
+        <label>Amount</label>
+        <textarea class="form-control" name="don" id="amount"></textarea><br><br>
+        <button class="btn btn-primary" onclick="payWithPaystack()">Proceed</button>  
+          </form>
+        </div>
+    <script src="https://js.paystack.co/v1/inline.js"></script> 
+    <script>
+      
+      const paymentForm = document.getElementById('paymentForm');
+paymentForm.addEventListener("submit", payWithPaystack, false);
+function payWithPaystack(e) {
+  e.preventDefault();
+  let handler = PaystackPop.setup({
+   key: 'pk_test_5cafde61913b53a7ec2b693ed7780526c0f2f32c', // Replace with your public key
+    email: 'zainabkappo@yahoo.com',
+   amount: document.getElementById("amount").value * 100,
+ ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+   // label: "Optional string that replaces customer email"
+   onClose: function(){
+     alert('Window closed.');
+   },
+   callback: function(response){
+     let message = 'Payment complete! Reference: ' + response.reference;
+     alert(message);
+     document.location.href="{{url_for('profile2')}}"
+
+   }
+  });
+
+
+ handler.openIframe();
+}
+    </script>
+    </body>
+    </html>

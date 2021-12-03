@@ -1,0 +1,32 @@
+{% extends 'user/layout.html' %}
+
+{% block banner %}
+<p style="color: blue;">
+  Thank you {{fname}},for contacting us 
+
+</p>
+
+
+
+  
+    {% set m =get_flashed_messages() %}
+    {% if m: %}
+    {% for i in m: %}
+    <p class="alert alert-info"> {{ i }}</p>
+    {% endfor %}
+    {% endif %}
+
+
+
+    <div>
+      {% if gender=='male' %}
+       <img src="{{url_for('static',filename='images/male_avatar.png')}}" height="200">
+      {% else %}
+      <img src="{{url_for('static',filename='images/female_avatar.png')}}" height="200">
+        {% endif %}
+      </div>
+
+
+
+
+{% endblock banner %}

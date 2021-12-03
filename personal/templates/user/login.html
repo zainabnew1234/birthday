@@ -1,0 +1,26 @@
+{% extends 'user/layout.html' %}
+
+
+{% block content %}
+<form method="post" action="">
+    <div class="form-group row">
+    <h1>Login Form</h1><br><br>
+    <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+    Username: <input type="text" name="text" class="form-control"><br><br><br>
+    Password: <input type="password" name="password" class="form-control"><br><br><br>
+    
+    <button class="btn btn-primary btn-large">Login</button>
+    </div>
+    </form>
+
+
+{% endblock %}
+
+{% block footer %}
+
+
+{% set p=get_flashed_messages() %}
+{% for i in p %}
+<div class="alert alert-danger"> {{ i }}  </div>  
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'user/layout2.html'%}
+
+{% block row1 %}
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">Member
+      <small>Payment Page</small>
+    </h1>
+
+    <div class='alert alert-info'> You are logged in. Last Logged in Thursday 21st 2019</div>
+
+    <!-- Content Row -->
+    <div class="row">
+      <!-- Sidebar Column -->
+      <div class="col-lg-3 mb-4">
+	  <div>
+	  <img src='profile/p1.jpg' class='img-fluid'>
+	  <form>
+	  <input type='file' name='mypix'>
+	  </form>
+	  </div>
+        <div class="list-group">
+          <a href="index.html" class="list-group-item">Home</a>
+          <a href="" class="list-group-item">Edit Profile</a>
+          <a href="payment.html" class="list-group-item">My Payments</a>
+          <a href="shop.html" class="list-group-item">Shop</a>
+          <a href="{{url_for('log')}}" class="list-group-item">Logout</a>
+         
+          
+        </div>
+      </div>
+      <!-- Content Column -->
+
+{% if iv: %}
+{% set file='docs/'+iv.doc_filename %}
+<a href="{{url_for('static',filename=file)}}">Download invitation</a>
+{% endif %}
+
+
+      <div class="col-lg-9 mb-4">
+        <h2>Hi {{ data.fname }} {{ data.lname }}</h2>
+        {% if data.profilepix != None: %}
+        {% set t = "images/guest"+ '/'+ data.profilepix %}
+        {% else %}
+        {% set t = ''%}
+        {% endif %}
+
+
+        <img src="{{url_for('static',filename=t)}}" width="80">
+        {% if data.profilepix == None %}
+        <p class="alert alert-danger">You need to upload a profile picture<a href="{{url_for('addpics')}}">Click here</a></p>
+        {% endif %}
+        <p>A welcome is a kind of greeting designed to introduce a person to a new place or situation, and to make them feel at ease. The term can similarly be used to describe the feeling of being accepted on the part of the new person. In some contexts, a welcome is extended to a stranger to an area or a household..</p>
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+{% endblock %}

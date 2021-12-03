@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>My profile</title>
+    </head>
+    <body>
+        <div class="container" style="border: 1px solid black;">
+
+<form id="form" enctype="multipart/form-data">
+            <h2>Ask Question</h2>
+        <label>Question</label>
+        <input type="file" name="pix">
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        <p id="feedback"><textarea class="form-control" name="quest" id="quest"></textarea><br><br></p>
+       Firstname: <input type="text" name="fname" id="fname"><br><br>
+       Lastname: <input type="text" name="lname" id="lname"><br><br>
+        <button class="btn btn-primary" id="btn" type="button">Submit</button>
+        </form>
+
+
+        </div>
+        <script src="{{url_for('static' ,filename='vendor/jquery/jquery.min.js')}}"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#btn').click(function(){
+                    var formdata=new FormData()
+                   
+               
+
+                    $.ajax({
+                        data:formdata,
+                        url:"{{url_for('submitajax')}}",
+                        type:"POST",
+                        dataType:"text",
+                        error:function(error){
+                            console.log(error)
+                        },
+                        success:function(msg){
+                            $('#feedback').html(msg)
+                            $('#quest').val('')
+                            $('#feedback').addClass('text-danger')
+                        }
+                    })
+                })
+            })
+        </script>
+
+    </body>
+</html>
+
+
+
+
+
+
+

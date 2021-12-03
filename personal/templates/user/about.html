@@ -1,0 +1,51 @@
+{% extends 'user/layout.html' %}
+{%import 'user/mac.html' as m%}
+
+
+
+
+{% block content %}
+
+
+
+<h2>HELLO WORLDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD</h2>
+    {{session.get('use')}}
+
+<p>YOU ARE WELCOME HERE</p>
+ {{m.rewrite(list)}} 
+
+  <div> {% set x =get_flashed_messages() %}
+      {% if x:%}
+      
+      {{ x }}
+      {% endif %}
+    
+
+</div>
+
+
+ <form action="" method="post">
+     <input type="hidden" value="{{ csrf_token() }}" name="csrf_token">
+     
+<div class="form-group-row">
+ <label>Rate Us</label>
+ <select name="rate">
+     <option value="1">1</option>
+     <option value="2">2</option>
+     <option value="3">3</option>
+     <option value="4">4</option>
+     <option value="5">5</option>
+ </select><br><br>
+ <button class="btn btn-primary">Submit</button>
+ </div>
+ </form>
+
+
+{% endblock %}
+
+
+{% block banner %}
+<img src="{{url_for('static',filename='images/prototype.png')}}">
+{% endblock banner %}
+
+

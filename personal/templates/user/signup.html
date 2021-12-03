@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>IT Professionals</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+  
+<style type="text/css">
+.nav-link{ color:white;}
+.nav-link:hover{
+	color:grey;
+}
+</style>
+
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg  fixed-top" style='background-color:green'>
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="images/logo2.png" width='100'></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+		   <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+		   <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Hello Adeola
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              <a class="dropdown-item" href="blog-home-1.html">Edit Profile</a>
+              <a class="dropdown-item" href="blog-home-2.html">My Payments</a>
+              <a class="dropdown-item" href="blog-post.html">Logout</a>
+            </div>
+          </li>
+          <li class="nav-item" style='background-color:yellow;margin-left:60px !important;'>
+            <a class="nav-link" style='color:green' href='#' data-toggle="modal" data-target="#exampleModal" >Login</a>
+          </li>
+           
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">IT Professionals App
+      <small>Signup</small>
+    </h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="index.html">Home</a>
+      </li>
+      <li class="breadcrumb-item active">Sign up Form</li>
+    </ol>
+
+ 
+    <div class="row">
+      <div class="col-lg-8 mb-4">
+ 
+        <form name="registerform" id="registerform" action='' method="post">
+          <div class="control-group form-group">
+            <div class="controls">
+              <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+              <label>First Name:</label>
+              <input type="text" class="form-control" id="name" name='fname'>
+              
+            </div>
+          </div>
+		  <div class="control-group form-group">
+            <div class="controls">
+              <label>Last Name:</label>
+              <input type="text" class="form-control" id="name" name='lname'>
+             
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Phone Number:</label>
+              <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Email Address:</label>
+              <input type="email" class="form-control" name='email' id="email" required>
+			   <p class="help-block text-muted">We promise never to spam you!</p>
+            </div>
+          </div>
+		  <div class="control-group form-group">
+            <div class="controls">
+              <label>Date of Birth:</label>
+              <input type="date" class="form-control" id="dob" name='dob'>
+             
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Profile (short):</label>
+              <textarea rows="5" cols="50" name='profile' class="form-control" id="profile"  maxlength="300" style="resize:none"></textarea>
+            </div>
+          </div>
+		  <div class="control-group form-group">
+            <div class="controls">
+              <label>Password:</label>
+              <input type="password" class="form-control" id="password" name='password'>
+             
+            </div>
+          </div>
+           
+          
+          <input type="submit" class="btn btn-primary" id="sendMessageButton" value="Sign Up">
+        </form>
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+ <!-- Footer -->
+  <footer class="py-5" style='background-color:green'>
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+ 
+
+</body>
+
+</html>

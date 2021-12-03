@@ -1,0 +1,12 @@
+#this is another way of picking form elemets when using ajax
+var d=$('#quest').val()
+var firstname=$('#fname').val()
+var lastname=$('#lname').val()
+var token="{{csrf_token()}}"
+var durl="quest="+d+"&first="+firstname+"&last="+lastname+"&csrf_token="+token
+
+
+
+
+var data2=$('#form').serialize()
+alert(data2)

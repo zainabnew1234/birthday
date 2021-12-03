@@ -1,0 +1,24 @@
+{% extends 'user/layout.html' %}
+
+
+{% block banner %}
+<div style="background-color: pink;">
+    <h2>
+        Welcome to the store
+    </h2>
+    <p>
+        Welcome {{mycookies}}
+    </p>
+
+
+    {% if mycookies == 'africa' %}
+     <p>We have ankara for sale</p>
+    {% elif mycookies == 'europe' %}
+     <p>We have winter coats for sale</p>
+    {% else %}
+     <p>Browse our range of clothes</p>
+    {% endif %}
+
+</div>
+
+{% endblock banner%}

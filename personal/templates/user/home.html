@@ -1,0 +1,109 @@
+{% extends 'user/layout2.html' %}
+
+
+{% block row1 %}
+
+        <!-- Product section-->
+        <section class="py-2">
+            <div class="container px-4 px-lg-5 my-2">
+                <div class="row">
+                    <div class="col text-center">
+                        <h2>Guest Registration App</h2>
+                        
+                    </div>
+                </div>
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{url_for('static',filename='images/bday.png')}}" alt="..." /></div>
+                    <div class="col-md-6">
+                 
+
+                 <form name="registerform" id="registerform" action='' method="post">
+          <div class="control-group form-group">
+            <div class="controls">
+                <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+              <label>First Name:</label>
+              <input type="text" class="form-control" id="name" name='fname'>
+              
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Last Name:</label>
+              <input type="text" class="form-control" id="name" name='lname'>
+             
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>State</label>
+              <select class="form-control" name="state">
+                  {% for i in allstates %}
+                  <option value="{{ i.id }}">{{ i.name}}</option>
+                  {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Email Address:</label>
+              <input type="email" class="form-control" name='email' id="email" required>
+               <p class="help-block text-muted">You will login with this</p>
+            </div>
+          </div>
+          
+           
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Password:</label>
+              <input type="password" class="form-control" id="password" name='password'>
+             
+            </div>
+          </div>
+           
+          
+          <input type="submit" class="btn btn-danger btn-block btn-lg" value="RSVP">
+        </form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endblock %}
+        
+
+
+        {% block row2%}
+        {{hostels}}
+
+        <h2 class="fw-bolder mb-4">Recently Registered Guests</h2>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            {% if hostels.status==1 %}
+            {% for h in hostels.data %}
+            <div class="col-md-3 mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" src="{{h.propertyPix}}" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{h.propertyName}}</h5>
+                            <!-- Product price-->
+                            ${{h.propertyPrice}}
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+
+               
+            </div>
+        </div>
+    </div>
+</section>
+        {% endblock %}

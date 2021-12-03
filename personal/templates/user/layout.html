@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>
+            {% block title %}
+              My Home Page
+            {% endblock title %}
+        </title>
+       
+        </style>
+        <link href="{{url_for('static',filename='css/bootstrap.css')}}" rel="stylesheet">
+      
+
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+        <h1>Welcome  {{user}} to my home page</h1>
+
+
+       
+<div class="container">
+        <div class="row">
+            <div class="col-12">
+
+
+             <ul>
+             <li><a href="/">Home</a></li>
+             <li><a href="/about">ABout</a></li>
+             <li><a href="/contact">Contact</a></li>
+             <li><a href="/cookie">Opt out of cookie</a></li>
+             {% if session.get('use') != None %}
+             <li><a href="#">Hello {{session.get('use')}}</a></li>
+             <li><a href="/logout">Logout</a></li>
+             {% else %}
+             <li><a href="/login">Login</a></li>
+             {% endif %}
+
+             </ul>
+             </div>
+        
+        
+    
+                <div class="col-12">
+                    {% block banner %}
+
+                    {% endblock banner %}
+                   
+                </div>
+
+                <div class="col-12"></div>
+               {% block content %}
+
+               {% endblock %}
+
+            </div>
+                <div class="col-12">
+               <h3>Hey world</h3>
+             </div>
+                <div class="col-12">
+                    {% block footer %}
+                   
+                    {% endblock  %}
+                </div>
+</div>
+</div>
+</div>
+
+    </body>
+</html>

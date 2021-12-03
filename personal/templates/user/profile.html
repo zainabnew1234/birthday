@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>My profile</title>
+        <link href="{{url_for('static',filename='css/bootstrap.css')}}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+
+         <form action="/update" method="post">
+             <h2>Update Password for User {{user}}</h2><br><br>
+             Old pwd:<input type="password" name='pwd'class='form-control'><br><br>
+             New pwd:<input type="password" name='pwd' class="form-control"><br><br>
+             <button class="btn btn-secondary">Update</button>
+         </form>
+
+         <a href="/">Go back to the home page</a>
+
+        </div>
+    </body>
+</html>

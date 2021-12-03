@@ -1,0 +1,30 @@
+
+{% macro rewrite(mylist) %}
+<table class="table table-striped">
+ {% for i in mylist: %}
+<tr>
+    <td>{{ loop.index }}</td>
+     <td>{{ i.upper() }}</td>
+</tr>
+{% endfor%}
+</table>
+{% endmacro %}
+
+
+
+
+
+{% macro rewrite(mylist) %}
+{% for i in mylist: %}
+{{ i.upper()}}
+{% endfor%}
+{% endmacro %}
+
+
+
+
+
+
+
+
+

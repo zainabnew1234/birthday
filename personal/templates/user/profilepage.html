@@ -1,0 +1,12 @@
+{% extends 'user/layout.html' %}
+
+
+{% block content %}
+
+
+<p>You are logged in {{session.get('use')}} </p>
+
+
+<a href="/logout">Click here to logout</a>
+
+{% endblock %}

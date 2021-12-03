@@ -1,0 +1,42 @@
+{% extends 'user/layout.html' %}
+
+{% block content %}
+<h2>Welcome home</h2>
+
+<p>
+    <a href="{{url_for('africa')}}">Visitors from africa,please click here</a>
+</p>
+
+<p>
+    <a href="{{url_for('europe')}}">Visitors from europe,please click here</a>
+</p>
+
+
+
+{% if retrieve %}
+<table class="table table-striped">
+<tr>
+    <th>Post Title</th>
+    <th>Post Content</th>
+    <th>Description</th>
+    <th>Date Posted</th>
+</tr>
+{% for i in retrieve%}
+<tr>
+    <td>{{ i[0] }}</td>
+    <td>{{ i[1] }}</td>
+    <td>{{ i[2] }}</td>
+    <td>{{ i[3] }}</td>
+
+</tr>
+{% endfor %}
+</table>
+{% endif%}
+
+
+{% endblock %}
+
+{% block banner %}
+<img src="{{url_for('static',filename='images/g2.jpg')}}">
+
+{% endblock banner %}

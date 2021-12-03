@@ -1,0 +1,77 @@
+{% extends 'user/layout2.html' %}
+
+
+{% block row1 %}
+       
+
+{{rsp}}
+<h3>STATE AND LGA</h3>
+<div>
+<label>Select state</label>
+<select name="all" id="all">
+   <option value="">Select</option>
+    {% for i in records %}
+    <option value="{{i.id }}"> {{i.name}} </option>
+    {% endfor %}
+</select>
+</div>
+<div id="lgas"></div><br><br>
+        {% endblock %}
+        
+    
+
+<h1>TEST page</h1>
+        {% block row2%}
+        
+<input type="text" name="username" placeholder="input" id="username">
+<p id="feed"></p>
+<button class='btn btn-danger' id="btn" type="button">Check</button>
+       
+
+<script src="{{url_for('static' ,filename='vendor/jquery/jquery.min.js')}}"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#all').change(function(){
+            var state=$(this).val()
+       
+            $.ajax({
+                url:"{{url_for('lga')}}",
+                data:"stateid="+state,
+                dataType:"text",
+                type:"GET",
+                success:function(m){
+                    $('#lgas').html(m)
+                },
+                error:function(e){
+                    console.log(e)
+                }
+            })
+        })
+
+        $('#btn').click(function(){
+            var username=$('#username').val()
+            var token="{{csrf_token()}}"
+            $.ajax({
+                url:"{{url_for('demajax')}}",
+                data:"user="+username+"csrf_token="+token,
+                dataType:'json',
+                type:'POST',
+                success:function(serverRsp){
+                    if(serverRsp.status=='failed'){
+                        $('#feed').addClass('alert-danger alert')
+                    }
+                    else{
+                        $('#feed').addClass('alert-sucess alert')
+                    }
+                    $('#feed').html(serverRsp.msg)
+                   
+                },
+                error:function(err){
+                    console.log(err)
+                },
+                beforeSend:function(){}
+            })
+        })
+    })
+</script>
+        {% endblock %}
